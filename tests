@@ -1,0 +1,5 @@
+curl --proxy 127.0.0.1:1081 https://api.my-ip.io/ip -L -v
+
+curl --socks5 --user <PROXY_USER>:<PROXY_PASSWORD> <docker host ip>:1080 http://ifcfg.co
+
+curl -x 127.0.0.1:1081 google.com -L -v

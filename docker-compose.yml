@@ -1,0 +1,20 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  server:
+    image: "python-proxy-server"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "$HTTP_PORT:$HTTP_PORT"
+      - "$HTTPS_PORT:$HTTPS_PORT"
+      - "$SOCKS4_PORT:$SOCKS4_PORT"
+      - "$SOCKS5_PORT:$SOCKS5_PORT"
+    volumes:
+      - .:/proxyserver
+      - logs:/var/log
+    env_file:
+      - .env
+    command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  logs: {}

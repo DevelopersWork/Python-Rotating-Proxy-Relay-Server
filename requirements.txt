@@ -1,0 +1,4 @@
+load-dotenv==0.1.0
+pycurl==7.45.1
+requests==2.25.1
+PySocks3.9==1.7.1
